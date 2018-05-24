@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="homeworkModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Planet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Species">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Planet_ID" Type="int" />
+  </EntityType>
+  <Association Name="FK__Species__Planet___164452B1">
+    <End Role="Planet" Type="Self.Planet" Multiplicity="0..1" />
+    <End Role="Species" Type="Self.Species" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planet">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Species">
+        <PropertyRef Name="Planet_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="homeworkModelStoreContainer">
+    <EntitySet Name="Planet" EntityType="Self.Planet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Species" EntityType="Self.Species" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Species__Planet___164452B1" Association="Self.FK__Species__Planet___164452B1">
+      <End Role="Planet" EntitySet="Planet" />
+      <End Role="Species" EntitySet="Species" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
