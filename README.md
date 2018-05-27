@@ -1,11 +1,11 @@
-## Homework
+### Homework
 Ohjelman on tehty käyttäen asp.net wep api ja entity framework
 
-## Kannan luonti:
+# Kannan luonti:
 
 Luo homework niminen tietokanta ja luo siihen tarvittavat taulut ajamalla tietokanta skripti taulujenLuonti.sql
 
-## Ohjelman käynnistäminen:
+# Ohjelman käynnistäminen:
 
 Avaa visual studio projektti Homework.sln
 
@@ -13,11 +13,11 @@ Käy muuttamassa tiedostosta Web.config connectionStringinstä data source vasta
 
 Sitten ohjelma pitäisi olla käyttövalmis.
 
-## Testaaminen
+# Testaaminen
 
 Rest-serverin toimintaa kannattaa testata Postman -nimesellä ohjelmalla, jonka voi ladata chrome web storesta.
 
-# Esimerki komentoja
+## Esimerki komentoja
  
 DELETE  /api/DeletePlanet/3 --poista planetan id perustella
 GET     /api/GetPlanet/2 --hakee planetaan tiedot id perustella
